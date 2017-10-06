@@ -48,15 +48,15 @@ def test_initialize_pypi_server_plugin():
         is_pypirc_exists = False
         pypi_server = 'some_pypi'
         pypi_url = 'https://some/pypi/url'
-        with open('pypirc_path', 'wb') as f:
+        with open(pypirc_path, 'w') as f:
             pipyrc_content = """
 [distutils]
 index-servers =
-    %s
+    {pypi_server}
 
-[some_pypi]
-repository: %s
-            """ % (pypi_server, pypi_url)
+[{pypi_server}]
+repository: {pypi_url}
+            """.format(pypi_server=pypi_server, pypi_url=pypi_url)
             f.write(pipyrc_content)
     project.set_property('pypi_server', pypi_server)
     initialize_pypi_server_plugin(project, Mock())

@@ -52,11 +52,11 @@ def test_initialize_pypi_server_plugin():
             pipyrc_content = """
 [distutils]
 index-servers =
-    {pypi_server}
+    %s
 
-[{pypi_server}]
-repository: {pypi_url}
-            """.format(pypi_server=pypi_server, pypi_url=pypi_url)
+[%s]
+repository: %s
+            """ %(pypi_server, pypi_server, pypi_url)
             f.write(pipyrc_content)
     project.set_property('pypi_server', pypi_server)
     initialize_pypi_server_plugin(project, Mock())

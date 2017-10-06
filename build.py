@@ -54,7 +54,7 @@ def set_properties(project):
     # pytest params
     project.get_property("pytest_extra_args").append("-v")
     project.get_property("pytest_extra_args").append("-s")
-    project.get_property("pytest_extra_args").append("--cov={}".format(name))
+    project.get_property("pytest_extra_args").append("--cov=%s" % name)
     project.get_property("pytest_extra_args").append("--cov-report=term-missing")
 
     # distutils

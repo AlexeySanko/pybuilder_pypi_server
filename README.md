@@ -1,2 +1,7 @@
-# pybuilder_pypi_server
-Pipy server plugin for PyBuilder: https://github.com/pybuilder/pybuilder
+PyBuilder Pytest Plugin [![Build Status](https://travis-ci.org/AlexeySanko/pybuilder_pypi_server.svg?branch=master)](https://travis-ci.org/AlexeySanko/pybuilder_pypi_server)
+=======================
+
+Description
+
+Header
+----------------------------------

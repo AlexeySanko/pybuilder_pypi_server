@@ -22,6 +22,7 @@ use_plugin("python.flake8")
 use_plugin("python.frosted")
 use_plugin("python.distutils")
 use_plugin('pypi:pybuilder_pytest')
+use_plugin('pypi:pybuilder_pytest_coverage')
 use_plugin('pypi:pybuilder_semver_git_tag')
 
 
@@ -51,14 +52,8 @@ def set_properties(project):
     project.set_property("frosted_break_build", True)
     project.set_property("frosted_include_test_sources", True)
 
-    # pytest params
-    project.get_property("pytest_extra_args").append("-v")
-    project.get_property("pytest_extra_args").append("-s")
-    project.get_property("pytest_extra_args").append("--cov=%s" % name)
-    project.get_property("pytest_extra_args").append("--cov-report=term-missing")
-
     # distutils
-    project.set_property('distutils_commands', ['bdist', 'bdist_wheel'])
+    project.set_property('distutils_commands', ['bdist_wheel'])
     project.set_property('distutils_classifiers', [
         'Development Status :: 4 - Beta',
         'Environment :: Console',

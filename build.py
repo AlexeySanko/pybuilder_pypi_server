@@ -22,10 +22,10 @@ use_plugin("python.flake8")
 use_plugin("python.frosted")
 use_plugin("python.distutils")
 use_plugin('pypi:pybuilder_pytest')
+use_plugin('pypi:pybuilder_semver_git_tag')
 
 
 name = "pybuilder_pypi_server"
-version = '1.0.0'
 authors = [Author('Alexey Sanko', 'alexeycount@gmail.com')]
 url = 'https://github.com/AlexeySanko/pybuilder_pypi_server'
 description = 'Please visit {0} for more information!'.format(url)

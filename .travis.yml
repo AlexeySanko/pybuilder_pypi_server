@@ -16,3 +16,17 @@ install:
   - pyb install_dependencies --verbose
 script:
   - pyb --debug
+deploy:
+  provider: pypi
+  user: AlexeySanko
+  distributions: "bdist_wheel"
+  server: https://upload.pypi.org/legacy/
+  on:
+    tags: true
+    branch: master
+    repo: AlexeySanko/pybuilder_pypi_server
+    python:
+      - '2.7'
+      - '3.6'
+  password:
+    secure: oeXNa1Nc9mJL7mhSIXV1VBp9qjQE/kZuyVeMDid03UDfVcLMThy+TN/Ccy9ami0YPOFetoUS+WlptFmoHaX4fFKhcuU4Bow58Gah+z0SMXh7QViNvlZTjSt6UhY8l/HlQNehtGyv0jjalHSFazZi0bfhgwJLoAZvl7ouFK/mezD/OTh/uxLGVd8FYlhKYIjAao1q6s2+c/XNIUlNgDISPblz5ZPhTDaJzd2i0dRm7flhS/PghDyBTiInDKGwhucQAXCvZQDBFvkC84quaThKBw+QI1jrC6nFnFYV06HKKQbji++uMXVuwf9/NcTDvxNFGOJq/LD9Alm/zGxLbDTctRwNgxDCP9CvawBVxpEF5z1EwwO99bRBKweP41xyCT2Nid9PAukY8D8zJ2t+SLL3eUKpjUPWeM7SveYafa+C6jldEDM3StUZeUN/3cRz3zSN6PMehSA60M3SrhTmMS+ZVudQIzvCL5MxfuhvZYmVdYpN8DAnWOgs+hHOaHn1GP/C1tcrI3Cm4bvVdCubSqcpCDmQJsi8SQiZz3L5aIqksIIaJ9KxAgH/qm5R4JhkVi8TXQI0yBeSzxvtB7IMIsXlxI9ZlAqx4lEegSEhBpUx5nomSncpCEDB1hrC4QpSOdpo4UxvxfEYQjwgrejHy/o8mdAERs54iiEuRriH8Pdhm/w=

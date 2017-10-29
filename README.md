@@ -1,4 +1,4 @@
-PyBuilder Pytest Plugin [![Build Status](https://travis-ci.org/AlexeySanko/pybuilder_pypi_server.svg?branch=master)](https://travis-ci.org/AlexeySanko/pybuilder_pypi_server)
+PyBuilder PyPi Server Plugin [![Build Status](https://travis-ci.org/AlexeySanko/pybuilder_pypi_server.svg?branch=master)](https://travis-ci.org/AlexeySanko/pybuilder_pypi_server)
 =======================
 
 Setuptools and pip use different configs and into closed environment with own pypi servers it could bring
@@ -11,4 +11,6 @@ Project property could be passed from command line:
 ```
 pyb clean analyze publish upload -P pypi_server=my_pypi
 ```
-Or within initializers.
+
+Or within initializers, but in this case any needed `PyBuilder` plugin 
+will be downloaded from default PyPi index. So command line usage is preferred way.

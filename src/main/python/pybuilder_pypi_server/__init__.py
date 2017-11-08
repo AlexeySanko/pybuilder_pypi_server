@@ -20,7 +20,10 @@ from setuptools.package_index import PyPIConfig
 from pybuilder.core import use_plugin
 from pybuilder.reactor import Reactor
 
+from pybuilder_pypi_server import version
+
 __author__ = 'Alexey Sanko'
+__version__ = version.__version__
 
 use_plugin("python.core")
 

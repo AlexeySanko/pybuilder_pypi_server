@@ -21,6 +21,8 @@ use_plugin("python.install_dependencies")
 use_plugin("python.flake8")
 use_plugin("python.frosted")
 use_plugin("python.distutils")
+use_plugin("filter_resources")
+# third party plugins
 use_plugin('pypi:pybuilder_pytest')
 use_plugin('pypi:pybuilder_pytest_coverage')
 use_plugin('pypi:pybuilder_semver_git_tag')
@@ -34,6 +36,15 @@ license = 'Apache License, Version 2.0'
 summary = 'PyBuilder Pipy Server Plugin'
 
 default_task = ['clean', 'analyze', 'publish']
+
+
+@init
+def filter_settings(project):
+    # filter target files
+    project.set_property('filter_resources_target', '$dir_dist')
+    # provide verions and other properties
+    project.get_property("filter_resources_glob").append(
+        "%s/version.py" % name)
 
 
 @init

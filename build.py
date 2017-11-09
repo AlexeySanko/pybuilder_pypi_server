@@ -1,6 +1,6 @@
 #   -*- coding: utf-8 -*-
 #
-#   Copyright 2016 Alexey Sanko
+#   Copyright 2017 Alexey Sanko
 #
 #   Licensed under the Apache License, Version 2.0 (the "License");
 #   you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ use_plugin("filter_resources")
 use_plugin('pypi:pybuilder_pytest')
 use_plugin('pypi:pybuilder_pytest_coverage')
 use_plugin('pypi:pybuilder_semver_git_tag')
+use_plugin('pypi:pybuilder_pylint_extended')
 
 
 name = "pybuilder_pypi_server"
@@ -50,7 +51,7 @@ def filter_settings(project):
 @init
 def set_properties(project):
     # dependencies
-    project.build_depends_on('pytest-cov')
+    project.build_depends_on('pytest-mock')
 
     # coverage
     project.set_property('coverage_break_build', False)
